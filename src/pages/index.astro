@@ -1,0 +1,15 @@
+---
+import type { Post } from '@wordpress/core-data';
+
+const res = await fetch(`${import.meta.env.PUBLIC_WP_API}/posts`);
+const posts: Post[] = await res.json();
+---
+
+<h1>Eeee!!1</h1>
+
+{
+  posts.map((post) => (
+      <h2 set:html={post.title.rendered} />
+      <p set:html={post.content.rendered} />
+  ))
+}
