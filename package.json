@@ -19,8 +19,10 @@
     "src/**/*.{ts}": "tsc --noEmit"
   },
   "dependencies": {
+    "@astrojs/svelte": "^3.0.0",
     "@wordpress/core-data": "^6.12.0",
-    "astro": "^2.7.1"
+    "astro": "^2.7.1",
+    "svelte": "^4.0.0",
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.1",

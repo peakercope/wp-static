@@ -1,0 +1,30 @@
+---
+const { title, imgUrl } = Astro.props;
+
+import Appearance from '@/components/Appearance.svelte';
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>
+      {title}
+    </h1>
+    {imgUrl && (
+      <Appearance>
+        <img alt={title} title={title} src={imgUrl} />
+      </Appearance>
+    )}
+    <article>
+      <slot />
+    </article>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+  }
+</style>
