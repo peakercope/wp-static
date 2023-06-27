@@ -1,0 +1,9 @@
+---
+import type { Post } from '@wordpress/core-data';
+import PostsList from '@components/PostsList.svelte';
+
+const res = await fetch(`${import.meta.env.PUBLIC_WP_API}/posts`);
+const posts: Post[] = await res.json();
+---
+
+<PostsList posts={posts} />

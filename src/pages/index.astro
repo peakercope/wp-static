@@ -1,18 +1,7 @@
 ---
-import type { Post } from '@wordpress/core-data';
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const res = await fetch(`${import.meta.env.PUBLIC_WP_API}/posts`);
-const posts: Post[] = await res.json();
+import HtmlLayout from '@layouts/HtmlLayout.astro';
+import Posts from '@static/Posts.astro';
 ---
-<BaseLayout title="Home page">
-  {
-    posts.map((post) => (
-      <h2>
-        <a href={`/page/${post.slug}/`} set:html={post.title.rendered} />
-      </h2>
-
-      <Fragment set:html={post.content.rendered} />
-    ))
-  }
-</BaseLayout>
+<HtmlLayout title="Home page">
+  <Posts />
+</HtmlLayout>
