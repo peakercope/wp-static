@@ -1,0 +1,11 @@
+---
+import type { Post } from '@wordpress/core-data';
+import { getPost } from '@service/data';
+import Post from '@components/Post.svelte';
+
+const { id } = Astro.props;
+
+const post: Post[] = await getPost(id);
+---
+
+<Post {...post} />

@@ -1,18 +1,22 @@
 ---
 import HtmlLayout from '@layouts/HtmlLayout.astro';
-import Post from '@components/Post.svelte';
-const { post } = Astro.props;
+import Post from '@static/Post.astro';
+import { getPostsSlug } from '@service/data';
+
+const { id, title } = Astro.props;
 
 export async function getStaticPaths() {
-  let data = await fetch<[Post]>(`${import.meta.env.PUBLIC_WP_API}/posts`);
-  let posts = await data.json();
+  let postsSlug = await getPostsSlug();
 
-  return posts.map((post) => ({
+  return postsSlug.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      id: post.id ,
+      title: post.title.rendered,
+    },
   }));
 }
 ---
-<HtmlLayout title={post.title.rendered}>
-  <Post post={post} />
+<HtmlLayout title={title}>
+  <Post id={id} />
 </HtmlLayout>

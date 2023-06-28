@@ -21,8 +21,11 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.43.0",
-    "eslint-plugin-astro": "^0.27.1"
+    "eslint-plugin-astro": "^0.27.1",
+    "postcss-csso": "^6.0.1",
+    "postcss-preset-env": "^8.5.1"
   },
   "packageManager": "^pnpm@7.25.0"
 }
