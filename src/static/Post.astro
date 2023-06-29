@@ -5,7 +5,7 @@ import Post from '@components/Post.svelte';
 
 const { id } = Astro.props;
 
-const post: Post[] = await getPost(id);
+const post: Post = await getPost(id);
 ---
 
 <Post {...post} />
