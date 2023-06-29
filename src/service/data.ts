@@ -1,7 +1,7 @@
 import type {Post} from '@wordpress/core-data';
 
 export const getPostsSlug = async ():Promise<Post[]> => {
-  const data = await fetch<[Post]>(`${import.meta.env.PUBLIC_WP_API}/posts?_fields=slug,id,title`);
+  const data = await fetch(`${import.meta.env.PUBLIC_WP_API}/posts?_fields=slug,id,title`);
 
   return await data.json();
 }
