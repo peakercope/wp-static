@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "astro": "astro",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint --ext .astro,.js,.ts src",
+    "lint": "eslint --ext .astro,.js,.ts src --fix",
     "type-check": "astro check && tsc --noEmit",
-    "astro": "astro",
     "prepare": "husky install"
   },
   "lint-staged": {
