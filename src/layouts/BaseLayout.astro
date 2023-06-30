@@ -1,4 +1,27 @@
-<main>
-  <slot />
+---
+import RightMenu from '@components/RightMenu.svelte';
+---
+
+<style>
+  main {
+    display: flex;
+  }
+
+  .main__left {
+    flex: 1 1 80%;
+  }
+
+  .main__right {
+    flex: 1 1 20%;
+  }
+</style>
+
+<main id="swup">
+  <div class="main__left">
+    <slot />
+  </div>
+  <div class="main__right">
+    <RightMenu />
+  </div>
 </main>
 
