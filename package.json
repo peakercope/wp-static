@@ -35,7 +35,9 @@
     "lint-staged": "^13.2.3",
     "postcss-csso": "^6.0.1",
     "postcss-preset-env": "^9.0.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "swup": "^3.1.1",
+    "@swup/slide-theme": "^1.0.5",
   },
   "packageManager": "^pnpm@7.25.0"
 }
