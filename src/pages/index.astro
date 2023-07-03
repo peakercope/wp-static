@@ -1,15 +1,7 @@
 ---
-import type { Post } from '@wordpress/core-data';
-
-const res = await fetch(`${import.meta.env.PUBLIC_WP_API}/posts`);
-const posts: Post[] = await res.json();
+import HtmlLayout from '@layouts/HtmlLayout.astro';
+import Posts from '@static/Posts.astro';
 ---
-
-<h1>Eeee!!1</h1>
-
-{
-  posts.map((post) => (
-      <h2 set:html={post.title.rendered} />
-      <p set:html={post.content.rendered} />
-  ))
-}
+<HtmlLayout title="Home page">
+  <Posts />
+</HtmlLayout>

@@ -1,0 +1,9 @@
+---
+import type { Post } from '@wordpress/core-data';
+import { getPosts } from '@service/data';
+import PostsList from '@components/PostsList.svelte';
+
+const posts: Post[] = await getPosts();
+---
+
+<PostsList posts={posts} />

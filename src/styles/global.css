@@ -1,0 +1,12 @@
+@custom-media --desktop-device screen and (width >= 1024px);
+
+body {
+  margin: 20px;
+}
+
+@media (--desktop-device){
+  body {
+    margin: 5px;
+  }
+}
+
