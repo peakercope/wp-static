@@ -26,8 +26,9 @@
     "svelte": "^4.0.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
+    "@swup/slide-theme": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.44.0",
     "eslint-plugin-astro": "^0.27.2",
@@ -35,9 +36,8 @@
     "lint-staged": "^13.2.3",
     "postcss-csso": "^6.0.1",
     "postcss-preset-env": "^9.0.0",
-    "typescript": "^5.1.6",
     "swup": "^3.1.1",
-    "@swup/slide-theme": "^1.0.5"
+    "typescript": "^5.1.6"
   },
   "packageManager": "^pnpm@7.25.0"
 }
