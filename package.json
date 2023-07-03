@@ -19,19 +19,22 @@
     "src/**/*.{ts}": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/svelte": "^3.0.0",
+    "@astrojs/svelte": "^3.1.0",
     "@astrojs/ts-plugin": "^1.0.10",
-    "@wordpress/core-data": "^6.12.0",
-    "astro": "^2.7.1",
-    "svelte": "^4.0.0",
+    "@wordpress/core-data": "^6.13.0",
+    "astro": "^2.7.3",
+    "svelte": "^4.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
-    "eslint": "^8.43.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.44.0",
     "eslint-plugin-astro": "^0.27.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "postcss-csso": "^6.0.1",
+    "postcss-preset-env": "^9.0.0",
     "typescript": "^5.1.6"
   },
   "packageManager": "^pnpm@7.25.0"
