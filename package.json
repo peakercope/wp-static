@@ -12,7 +12,7 @@
     "lint": "npm-run-all --parallel lint:astro lint:svelte lint:es lint:types",
     "lint:astro": "astro check",
     "lint:svelte": "pnpm svelte-check",
-    "lint:es": "eslint --ext .astro,.svelte,.js,.ts src --fix",
+    "lint:es": "eslint --ext .astro,.svelte,.js,.ts src",
     "lint:types": "tsc --noEmit",
     "prepare": "husky install"
   },

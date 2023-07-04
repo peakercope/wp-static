@@ -4,8 +4,6 @@
   export let title: Post['title'];
   export let content: Post['content'];
   // export let _embedded;
-
-  let a =1
 </script>
 
 <!--
