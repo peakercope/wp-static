@@ -16,11 +16,6 @@
     "lint:types": "tsc --noEmit",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "src/**/*.{js,ts,svelte,astro}": "eslint --fix",
-    "src/**/*.{ts,astro}": "astro check",
-    "src/**/*.{ts}": "tsc --noEmit"
-  },
   "dependencies": {
     "@astrojs/svelte": "^3.1.0",
     "@astrojs/ts-plugin": "^1.0.10",
