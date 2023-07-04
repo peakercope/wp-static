@@ -45,5 +45,9 @@
     "svelte-check": "^3.4.4",
     "typescript": "^5.1.6"
   },
+  "lint-staged": {
+    "*.{astro,svelte,js,ts}": "eslint --fix",
+    "*.{svelte}": "svelte-check"
+  },
   "packageManager": "^pnpm@7.25.0"
 }
