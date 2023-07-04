@@ -9,8 +9,11 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint --ext .astro,.js,.ts src --fix",
-    "type-check": "astro check && tsc --noEmit",
+    "lint": "npm-run-all --parallel lint:astro lint:svelte lint:es lint:types",
+    "lint:astro": "astro check",
+    "lint:svelte": "pnpm svelte-check",
+    "lint:es": "eslint --ext .astro,.svelte,.js,.ts src --fix",
+    "lint:types": "tsc --noEmit",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -21,22 +24,30 @@
   "dependencies": {
     "@astrojs/svelte": "^3.1.0",
     "@astrojs/ts-plugin": "^1.0.10",
+    "@swup/slide-theme": "^1.0.5",
     "@wordpress/core-data": "^6.13.0",
     "astro": "^2.7.3",
-    "svelte": "^4.0.2"
+    "svelte": "^4.0.3",
+    "swup": "^3.1.1"
   },
   "devDependencies": {
-    "@swup/slide-theme": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.44.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-astro": "^0.27.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-svelte": "^2.32.2",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "npm-run-all": "^4.1.5",
     "postcss-csso": "^6.0.1",
     "postcss-preset-env": "^9.0.0",
-    "swup": "^3.1.1",
+    "svelte-check": "^3.4.4",
     "typescript": "^5.1.6"
   },
   "packageManager": "^pnpm@7.25.0"

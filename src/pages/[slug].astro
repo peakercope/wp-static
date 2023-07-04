@@ -6,12 +6,12 @@ import { getPostsSlug } from '@service/data';
 const { id, title } = Astro.props;
 
 export async function getStaticPaths() {
-  let postsSlug = await getPostsSlug();
+  const postsSlug = await getPostsSlug();
 
   return postsSlug.map((post) => ({
     params: { slug: post.slug },
     props: {
-      id: post.id ,
+      id: post.id,
       title: post.title.rendered,
     },
   }));
