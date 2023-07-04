@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import PostListItem from '@components/PostListItem.svelte';
+  import type { Post } from '@wordpress/core-data';
 
-  export let posts;
+  export let posts: Post[] = [];
 </script>
 
 <ul>
