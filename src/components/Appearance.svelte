@@ -1,12 +1,6 @@
 <script lang="ts">
 </script>
 
-<div class="container">
+<div>
   <slot />
 </div>
-
-<style>
-  .container {
-    display: block;
-  }
-</style>
