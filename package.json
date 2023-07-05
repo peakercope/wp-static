@@ -22,7 +22,7 @@
     "@swup/slide-theme": "^1.0.5",
     "@wordpress/core-data": "^6.13.0",
     "astro": "^2.7.3",
-    "svelte": "^4.0.3",
+    "svelte": "^4.0.4",
     "swup": "^3.1.1"
   },
   "devDependencies": {
@@ -42,6 +42,7 @@
     "npm-run-all": "^4.1.5",
     "postcss-csso": "^6.0.1",
     "postcss-preset-env": "^9.0.0",
+    "sass": "^1.63.6",
     "svelte-check": "^3.4.4",
     "typescript": "^5.1.6"
   },

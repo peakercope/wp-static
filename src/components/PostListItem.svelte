@@ -5,10 +5,14 @@
   export let slug: Post['slug'];
 </script>
 
-<li>
-  <h1>
-    <a href="{slug}">
-      {title}
-    </a>
-  </h1>
+<li class="title">
+  <a href={slug}>{title}</a>
 </li>
+
+<style lang="scss">
+  .title {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    list-style-type: none;
+  }
+</style>
