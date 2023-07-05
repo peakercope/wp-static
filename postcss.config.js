@@ -1,5 +1,8 @@
-import postcssPresetEnv  from 'postcss-preset-env';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import postcssPresetEnv from 'postcss-preset-env';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Autoprefixer from 'autoprefixer';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import csso from 'postcss-csso';
 
 export default {

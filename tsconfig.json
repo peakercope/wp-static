@@ -7,9 +7,10 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@static/*": ["src/static/*"],
-      "@service/*": ["src/service/*"],
+      "@pages/*": ["src/pages/*"],
+      "@services/*": ["src/services/*"],
       "@styles/*": ["src/styles/*"],
+      "@ts/*": ["src/types/*"]
     },
     "plugins": [
       {

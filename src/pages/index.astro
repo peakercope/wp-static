@@ -1,7 +1,11 @@
 ---
 import HtmlLayout from '@layouts/HtmlLayout.astro';
-import Posts from '@static/Posts.astro';
+import type { Post } from '@wordpress/core-data';
+import { getPosts } from '@services/data';
+import PostsList from '@components/PostsList.svelte';
+
+const posts: Post[] = await getPosts();
 ---
 <HtmlLayout title="Home page">
-  <Posts />
+  <PostsList posts={posts} />
 </HtmlLayout>
