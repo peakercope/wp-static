@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Post } from '@ts/post';
+  import type { Post } from '@/types/post';
 
   export let title: Post['title'];
   export let content: Post['content'];

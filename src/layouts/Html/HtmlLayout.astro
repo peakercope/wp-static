@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import '@styles/global.css';
+import BaseLayout from '../Base/BaseLayout.astro';
+import '@/styles/global.css';
 
 const { title } = Astro.props;
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,8 @@ const { title } = Astro.props;
       </h1>
       <slot />
     </BaseLayout>
-    <script type="module" src="../../public/app.js"></script>
+    <script>
+      import './swup';
+    </script>
   </body>
 </html>

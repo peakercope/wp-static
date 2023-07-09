@@ -1,13 +1,12 @@
 ---
-import type { Post as PostType } from '@wordpress/core-data';
-import HtmlLayout from '@layouts/HtmlLayout.astro';
-import { getPostsSlug, getPost } from '@services/data';
-import Post from '@components/Post.svelte';
+import HtmlLayout from '@/layouts/Html/HtmlLayout.astro';
+import { postService } from '@/services';
+import { Post } from '@/components';
 
 const { id, title } = Astro.props;
 
 export async function getStaticPaths() {
-  const postsSlug:PostType[] = await getPostsSlug();
+  const postsSlug = await postService.getAll(['id', 'slug', 'title']);
 
   return postsSlug.map((post) => ({
     params: { slug: post.slug },
@@ -22,7 +21,7 @@ const {
   title: postTitle,
   content,
   _embedded: embedded,
-} = await getPost(id, true);
+} = await postService.getById(id, true);
 ---
 <HtmlLayout title={title}>
   <Post

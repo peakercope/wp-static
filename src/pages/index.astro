@@ -1,11 +1,18 @@
 ---
-import HtmlLayout from '@layouts/HtmlLayout.astro';
-import type { Post } from '@wordpress/core-data';
-import { getPosts } from '@services/data';
-import PostsList from '@components/PostsList.svelte';
+import HtmlLayout from '@/layouts/Html/HtmlLayout.astro';
+import { PostsList, PostListItem } from '@/components';
+import { postService } from '@/services';
 
-const posts: Post[] = await getPosts();
+const posts = await postService.getAll();
 ---
+
 <HtmlLayout title="Home page">
-  <PostsList posts={posts} />
+  <PostsList>
+    {posts.map(({ title, slug }) => (
+      <PostListItem
+        title={title.rendered}
+        slug={slug}
+      />
+    ))}
+  </PostsList>
 </HtmlLayout>

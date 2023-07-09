@@ -1,6 +1,6 @@
-import type { Post as WpPost } from '@wordpress/core-data';
+import type { Post as WPPost } from '@wordpress/core-data';
 
-export interface Post extends WpPost {
+export interface Post extends WPPost {
   _embedded?: {
     'wp:featuredmedia': { source_url: string }[];
   };
