@@ -5,11 +5,7 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@static/*": ["src/static/*"],
-      "@service/*": ["src/service/*"],
-      "@styles/*": ["src/styles/*"],
+      "@/*": ["src/*"]
     },
     "plugins": [
       {

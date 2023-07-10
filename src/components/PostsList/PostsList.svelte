@@ -1,6 +1,6 @@
 <script lang="ts">
 </script>
 
-<div>
+<ul>
   <slot />
-</div>
+</ul>

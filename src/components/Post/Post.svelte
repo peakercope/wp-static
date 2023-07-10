@@ -1,21 +1,19 @@
 <script lang="ts">
-  import type { Post } from '@wordpress/core-data';
+  import type { Post } from '@/types/post';
 
   export let title: Post['title'];
   export let content: Post['content'];
-  // export let _embedded;
+  export let embedded: Post['_embedded'];
 </script>
 
-<!--
-{#if _embedded?.['wp:featuredmedia']?.['0']?.source_url}
+{#if embedded?.['wp:featuredmedia']?.['0']?.source_url}
   <img
     alt={title.rendered}
     title={title.rendered}
-    src={_embedded['wp:featuredmedia']['0'].source_url}
+    src={embedded['wp:featuredmedia']['0'].source_url}
   />
 {/if}
- -->
-<span>{title}</span>
+
 {#if content.rendered}
   <div>
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->

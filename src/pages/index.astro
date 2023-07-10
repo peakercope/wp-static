@@ -1,7 +1,18 @@
 ---
-import HtmlLayout from '@layouts/HtmlLayout.astro';
-import Posts from '@static/Posts.astro';
+import HtmlLayout from '@/layouts/Html/HtmlLayout.astro';
+import { PostsList, PostListItem } from '@/components';
+import { postService } from '@/services';
+
+const posts = await postService.getAll();
 ---
+
 <HtmlLayout title="Home page">
-  <Posts />
+  <PostsList>
+    {posts.map(({ title, slug }) => (
+      <PostListItem
+        title={title.rendered}
+        slug={slug}
+      />
+    ))}
+  </PostsList>
 </HtmlLayout>
