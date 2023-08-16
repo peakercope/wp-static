@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Post } from '@/types/post';
+  import type { PostType } from '../../model';
 
-  export let title: Post['title'];
-  export let content: Post['content'];
-  export let embedded: Post['_embedded'];
+  export let title: PostType['title'];
+  export let content: PostType['content'];
+  export let embedded: PostType['_embedded'];
 </script>
 
 {#if embedded?.['wp:featuredmedia']?.['0']?.source_url}

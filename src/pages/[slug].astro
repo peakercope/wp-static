@@ -1,12 +1,11 @@
 ---
-import HtmlLayout from '@/layouts/Html/HtmlLayout.astro';
-import { postService } from '@/services';
-import { Post } from '@/components';
+import { PageLayout } from '@/shared';
+import { postApi, Post } from '@/entities/post';
 
 const { id, title } = Astro.props;
 
 export async function getStaticPaths() {
-  const postsSlug = await postService.getAll(['id', 'slug', 'title']);
+  const postsSlug = await postApi.getAll(['id', 'slug', 'title']);
 
   return postsSlug.map((post) => ({
     params: { slug: post.slug },
@@ -21,12 +20,12 @@ const {
   title: postTitle,
   content,
   _embedded: embedded,
-} = await postService.getById(id, true);
+} = await postApi.getById(id, true);
 ---
-<HtmlLayout title={title}>
+<PageLayout title={title}>
   <Post
     title={postTitle}
     content={content}
     embedded={embedded}
   />
-</HtmlLayout>
+</PageLayout>

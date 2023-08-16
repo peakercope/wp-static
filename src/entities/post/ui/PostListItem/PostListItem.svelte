@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Post } from '@wordpress/core-data';
+  import type { PostType } from '../../model';
 
-  export let title: Post['title']['rendered'];
-  export let slug: Post['slug'];
+  export let title: PostType['title']['rendered'];
+  export let slug: PostType['slug'];
 </script>
 
 <li class="title">

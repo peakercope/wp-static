@@ -1,4 +1,4 @@
-export class BaseService {
+export class BaseApi {
   PUBLIC_API_URL = import.meta.env.PUBLIC_WP_API;
 
   fetch = fetch;
