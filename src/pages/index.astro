@@ -1,12 +1,11 @@
 ---
-import HtmlLayout from '@/layouts/Html/HtmlLayout.astro';
-import { PostsList, PostListItem } from '@/components';
-import { postService } from '@/services';
+import { PageLayout } from '@/shared';
+import { PostsList, PostListItem, postApi } from '@/entities/post';
 
-const posts = await postService.getAll();
+const posts = await postApi.getAll();
 ---
 
-<HtmlLayout title="Home page">
+<PageLayout title="Home page">
   <PostsList>
     {posts.map(({ title, slug }) => (
       <PostListItem
@@ -15,4 +14,4 @@ const posts = await postService.getAll();
       />
     ))}
   </PostsList>
-</HtmlLayout>
+</PageLayout>

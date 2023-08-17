@@ -1,25 +1,30 @@
 ---
-import BaseLayout from '../Base/BaseLayout.astro';
-import '@/styles/global.css';
+import '../../global.css';
 
 const { title } = Astro.props;
 
 ---
-<!DOCTYPE html>
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
 <html lang="en">
   <head>
     <title>{title}</title>
     <meta charset="utf-8">
   </head>
   <body>
-    <BaseLayout>
+    <main id="swup">
       <h1>
         {title}
       </h1>
       <slot />
-    </BaseLayout>
+    </main>
     <script>
-      import './swup';
+      import '../../lib/swup.js';
     </script>
   </body>
 </html>
