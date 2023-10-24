@@ -17,38 +17,39 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/svelte": "^3.1.0",
-    "@astrojs/ts-plugin": "^1.0.10",
+    "@astrojs/svelte": "^4.0.3",
+    "@astrojs/ts-plugin": "^1.2.0",
     "@swup/slide-theme": "^1.0.5",
-    "@wordpress/core-data": "^6.13.0",
-    "astro": "^2.7.3",
-    "svelte": "^4.0.4",
+    "@wordpress/core-data": "^6.21.0",
+    "astro": "^3.3.3",
+    "svelte": "^4.2.2",
     "swup": "^3.1.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.44.0",
+    "@astrojs/check": "^0.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.52.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-astro": "^0.27.2",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-astro": "^0.29.1",
+    "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-svelte": "^2.32.2",
+    "eslint-plugin-svelte": "^2.34.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^15.0.2",
     "npm-run-all": "^4.1.5",
     "postcss-csso": "^6.0.1",
-    "postcss-preset-env": "^9.0.0",
-    "sass": "^1.63.6",
-    "svelte-check": "^3.4.4",
-    "typescript": "^5.1.6"
+    "postcss-preset-env": "^9.2.0",
+    "sass": "^1.69.4",
+    "svelte-check": "^3.5.2",
+    "typescript": "^5.2.2"
   },
   "lint-staged": {
     "*.{astro,svelte,js,ts}": "eslint --fix",
     "*.{svelte}": "svelte-check"
   },
-  "packageManager": "^pnpm@7.25.0"
+  "packageManager": "pnpm@8.9.2"
 }
