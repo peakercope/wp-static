@@ -2,12 +2,14 @@ import { BaseApi } from '@/shared';
 import type { PostType } from '../model';
 
 class PostApi extends BaseApi {
-  getAll(fields: string[] = []): Promise<PostType[]> {
-    return this.get(`${this.PUBLIC_API_URL}/posts${fields.length > 0 ? `?_fields=${fields.join(',')}` : ''}`).then((res) => res.json());
+  async getAll(fields: string[] = []): Promise<PostType[]> {
+    const res = await this.get(`${this.PUBLIC_API_URL}/posts${fields.length > 0 ? `?_fields=${fields.join(',')}` : ''}`);
+    return res.json();
   }
 
-  getById(id: number, embed = false): Promise<PostType> {
-    return this.get(`${this.PUBLIC_API_URL}/posts/${id}${embed && '?_embed'}`).then((res) => res.json());
+  async getById(id: number, embed = false): Promise<PostType> {
+    const res = await this.get(`${this.PUBLIC_API_URL}/posts/${id}${embed && '?_embed'}`);
+    return res.json();
   }
 }
 

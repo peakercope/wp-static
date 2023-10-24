@@ -13,5 +13,14 @@
       },
     ]
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": [
+    ".eslintrc.*",
+    "**/*.ts",
+    "**/*.astro",
+    "**/*.svelte",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.js"
+  ]
 }
