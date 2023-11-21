@@ -1,17 +1,55 @@
 ---
-import { PageLayout } from '@/shared';
-import { PostsList, PostListItem, postApi } from '@/entities/post';
+import { Parser, DomHandler, } from 'htmlparser2';
 
-const posts = await postApi.getAll();
+import { PageLayout } from '@/shared';
+import { pageApi, Page } from '@/entities/page';
+
+export const elements: [] = [];
+
+const { content } = await pageApi.getHomePage(2);
+
+const handler = new DomHandler((error, dom) => {
+  if (error) {
+    console.error('Parsing error:', error);
+  } else {
+    handleParsedData(dom);
+  }
+});
+
+const parser = new Parser(handler);
+parser.write(content.rendered);
+parser.end();
+
+function handleParsedData(dom) {
+  if (!dom.length) return;
+
+  elements.push(
+    ...dom.reduce((previousValue, currentValue, index) => {
+      if (!currentValue?.name) {
+        return previousValue;
+      }
+
+      return [
+        ...previousValue,
+        {
+          id: index,
+          name: currentValue.name,
+          attributes: currentValue.attributes,
+          parent: currentValue.parent.children,
+        },
+      ];
+    }, [])
+  );
+}
 ---
 
-<PageLayout title="Home page">
-  <PostsList>
-    {posts.map(({ title, slug }) => (
-      <PostListItem
-        title={title.rendered}
-        slug={slug}
-      />
-    ))}
-  </PostsList>
+<PageLayout>
+  <Page
+    content={content}
+    elements={elements}
+  />
 </PageLayout>
+
+<script>
+  console.log(elements)
+</script>

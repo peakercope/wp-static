@@ -1,32 +1,31 @@
 <script>
-    import { onMount } from 'svelte';
-    import { JSDOM } from 'jsdom';
+  import { onMount } from 'svelte';
+  import Paragraph from '../Tags/Paragraph.svelte';
 
-    export let tag;
-    export let props;
-    export let content;
+  export let tag;
+  export let props;
+  export let content;
+  // export let element
+  // console.log(element);
 
-    let Component;
+  const componentMap = {
+    p: Paragraph,
+  };
 
-    onMount(async () => {
-      const dom = new JSDOM();
-      global.window = dom.window;
-      global.document = dom.window.document;
+  let Component = componentMap[tag];
 
-      const componentMap = {
-        p: 'Paragraph',
-        h1: 'Heading1',
-        img: 'Image',
-      };
 
-      if (componentMap[tag]) {
-        Component = await import(`./${componentMap[tag]}.svelte`);
-      }
-    });
+  let container;
+
+  onMount(() => {
+    const child = document.createElement('span');
+    child.textContent = 'child';
+    container.appendChild(child);
+  });
 </script>
 
 {#if Component}
-    <Component {props} {content} />
+  <Component {props} {content} />
 {:else}
-    <p>Unknown component: {tag}</p>
+  {@html container}
 {/if}

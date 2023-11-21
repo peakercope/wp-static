@@ -1,0 +1,17 @@
+---
+import { PageLayout } from '@/shared';
+import { PostsList, PostListItem, postApi } from '@/entities/post';
+
+const posts = await postApi.getAll();
+---
+
+<PageLayout title="Blog">
+  <PostsList>
+    {posts.map(({ title, slug }) => (
+      <PostListItem
+        title={title.rendered}
+        slug={slug}
+      />
+    ))}
+  </PostsList>
+</PageLayout>

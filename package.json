@@ -17,11 +17,15 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/node": "^6.0.3",
     "@astrojs/svelte": "^4.0.3",
     "@astrojs/ts-plugin": "^1.2.0",
     "@swup/slide-theme": "^1.0.5",
     "@wordpress/core-data": "^6.21.0",
     "astro": "^3.3.3",
+    "dom-serializer": "^2.0.0",
+    "domhandler": "^5.0.3",
+    "htmlparser2": "^9.0.0",
     "jsdom": "^22.1.0",
     "svelte": "^4.2.2",
     "swup": "^3.1.1"
